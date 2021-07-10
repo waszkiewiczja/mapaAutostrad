@@ -1,2 +1,3 @@
 # map2
-Mapa inwestycji v2
+Mapa inwestycji drogowych w Polsce. 
+Stworzono w Django i Javascript.
