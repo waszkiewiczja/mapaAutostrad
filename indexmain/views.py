@@ -6,23 +6,26 @@ from django.http import JsonResponse
 from .serlializers import RoadSerializer
 from .models import *
 
+from datetime import timedelta
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
+
 # Create your views here.
 
 def index(request):
     roads = Road.objects.all()
-    roads_od_najtanszej = Road.objects.all().order_by("koszt")
-    roads_od_najdrozszej = Road.objects.all().order_by("-koszt")
-
     ilosc_inwestycji = roads.count()
 
-    print(request.GET)
-
     sortujID = request.GET.get("sortuj")
-    print("sortujeID", sortujID)
+
     if sortujID == 'odnajtanszej':
         roads = Road.objects.all().order_by("koszt")
     elif sortujID == 'odnajdrozszej':
         roads = Road.objects.all().order_by("-koszt")
+    elif sortujID == 'najkrotszy':
+        roads = Road.objects.all().order_by("data_ukonczenia")
+    elif sortujID == 'najdluzszy':
+        roads = Road.objects.all().order_by("-data_ukonczenia")
     elif sortujID == None:
         roads = Road.objects.all()
     else:
