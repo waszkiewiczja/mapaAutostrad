@@ -38,30 +38,30 @@ def index(request):
     return render(request, 'indexmain/index.html', context)
 
 
-# def map(request):
-#     roads = Road.objects.all()
-#     context = {'roads':roads}
-#     return render(request, 'indexmain/map.html', context)
+def map(request):
+    roads = Road.objects.all()
+    context = {'roads':roads}
+    return render(request, 'indexmain/map.html', context)
 
 
 
-# @api_view(['GET'])
-# def api (request):
-#     api_urls = {
-#         'List':'/road-list/',
-#     }
-#     return Response(api_urls)
+@api_view(['GET'])
+def api (request):
+    api_urls = {
+        'List':'/road-list/',
+    }
+    return Response(api_urls)
 
 
-# @api_view(['GET'])
-# def roadList(request):
-#     roads = Road.objects.all()
-#     serializer = RoadSerializer(roads, many=True)
-#     return Response(serializer.data)
+@api_view(['GET'])
+def roadList(request):
+    roads = Road.objects.all()
+    serializer = RoadSerializer(roads, many=True)
+    return Response(serializer.data)
 
 
-# @api_view(['GET'])
-# def roadDetail(request, pk):
-#     roads = Road.objects.get(id=pk)
-#     serializer = RoadSerializer(roads, many=False)
-#     return Response(serializer.data)
+@api_view(['GET'])
+def roadDetail(request, pk):
+    roads = Road.objects.get(id=pk)
+    serializer = RoadSerializer(roads, many=False)
+    return Response(serializer.data)
