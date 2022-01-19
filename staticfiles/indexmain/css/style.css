@@ -1,0 +1,500 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Początek hamburger menu:  */
+
+.menuGlowne {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  align-items: center; /*Jeżeli chcemy wyrównanie w pionie to dajemy center, jak nie chcemy to dajemy stretch */
+  height: 5rem;
+}
+
+.przyciskMobile {
+  display: none;
+}
+
+.lewyPrzycisk {
+  text-align: left;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+}
+
+.lewyPrzycisk a {
+  color: black;
+  text-decoration: none;
+  margin-right: 0.5rem;
+}
+
+.lewyPrzycisk a:hover {
+  color: rgb(0, 106, 255);
+  text-decoration: none;
+  margin-right: 0.5rem;
+}
+
+.srodkowyPrzycisk {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: rgb(0, 106, 255);
+}
+
+.prawyPrzycisk {
+  text-align: right;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  font-size: 1.5rem;
+}
+
+.prawyPrzycisk a {
+  color: black;
+  text-decoration: none;
+  margin-right: 0.5rem;
+}
+
+.prawyPrzycisk a:hover {
+  color: rgb(0, 106, 255);
+  text-decoration: none;
+  margin-right: 0.5rem;
+}
+.przycisk3linieOrazX {
+  padding: 1rem;
+}
+
+.przycisk3linieOrazX div {
+  width: 2em;
+  height: 0.2em;
+  background: rgb(0, 106, 255);
+  margin: 0.4em;
+}
+
+hr.liniarozdzielajaca {
+  border-top: 1px solid rgb(216, 216, 216);
+}
+
+hr.liniarozdzielajaca2 {
+  border-top: 1px solid rgb(216, 216, 216);
+  margin-bottom: 1rem;
+}
+
+/* Gdy szerokość ekranu jest mniejsza niż 1200. Co robić: */
+@media only screen and (max-width: 1200px) {
+  .menuGlowne {
+    grid-template-columns: 1fr 1fr 0.6fr;
+  }
+  .srodkowyPrzycisk {
+    font-size: 2rem;
+  }
+}
+
+/* Gdy szerokość ekranu jest mniejsza niż 900. Co robić: */
+@media only screen and (max-width: 900px) {
+  .menuGlowne {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .bodyoverflow {
+    overflow: hidden;
+  }
+
+  .menuGlowneMobile {
+    height: 100vh;
+    align-content: flex-start;
+  }
+
+  .przyciskMobile {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    text-align: left;
+    align-items: center;
+  }
+
+  .przycisk3linieOrazX {
+    background: white;
+  }
+
+  .logoMobileMenu {
+    color: rgb(0, 106, 255);
+    font-size: 2rem;
+    font-weight: bold;
+    padding-left: 5%;
+  }
+
+  .lewyPrzycisk {
+    display: none;
+    margin-top: 2rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .lewyPrzycisk a {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    border-top: 1px solid rgb(216, 216, 216);
+  }
+
+  .lewyPrzyciskWidocznosc {
+    display: grid;
+  }
+
+  .srodkowyPrzycisk {
+    display: none;
+  }
+
+  .prawyPrzycisk {
+    display: none;
+  }
+
+  .prawyPrzyciskWidocznosc {
+    display: grid;
+    text-align: left;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    border-top: 1px solid rgb(216, 216, 216);
+  }
+
+  .zmiana3liniiNaX .linia1 {
+    transform: rotate(-45deg) translate(-5px, 8px);
+  }
+  .zmiana3liniiNaX .linia2 {
+    opacity: 0;
+  }
+  .zmiana3liniiNaX .linia3 {
+    transform: rotate(45deg) translate(-5px, -8px);
+  }
+}
+
+/* Koniec hamburger menu */
+
+/* Dropdown menu */
+.dropdownMenu {
+  display: flex;
+  height: 5rem;
+}
+
+.pojedynczaKolumnaMenu {
+  margin: 1rem;
+  width: 11rem;
+}
+
+.nazwaGlownaDropdownMenu {
+  width: 100%;
+  height: 3rem;
+  border: 1px solid rgb(216, 216, 216);
+  background: white;
+  cursor: pointer;
+  color: rgb(0, 106, 255);
+  font-size: 1.1rem;
+}
+
+.nazwaGlownaDropdownMenu:hover {
+  background: rgba(0, 106, 255, 0.164);
+  color: #262626;
+}
+
+.nazwaGlownaDropdownMenuAktywna {
+  background: rgb(0, 106, 255);
+  color: white;
+}
+
+.zbiorWierszyMenu {
+  width: 100%;
+  position: relative;
+  display: none;
+}
+
+.pojedynczyWierszMenu {
+  width: 100%;
+  height: 3rem;
+  padding: 1rem;
+  background: white;
+  text-align: center;
+  align-content: center;
+  position: absolute;
+  border-bottom: 1px solid rgb(216, 216, 216);
+  z-index: 999;
+}
+
+.kol1wiersz1 {
+  margin-top: 0;
+}
+
+.kol1wiersz2 {
+  margin-top: 3rem;
+}
+
+.kol1wiersz3 {
+  margin-top: 6rem;
+}
+
+.kol1wiersz4 {
+  margin-top: 9rem;
+}
+
+.kol1wiersz5 {
+  margin-top: 12rem;
+}
+
+.kol1wiersz6 {
+  margin-top: 15rem;
+}
+
+.kol2wiersz1 {
+  margin-top: 0;
+}
+
+.kol2wiersz2 {
+  margin-top: 3rem;
+}
+
+.kol2wiersz3 {
+  margin-top: 6rem;
+}
+
+.kol2wiersz4 {
+  margin-top: 9rem;
+}
+
+.kol3wiersz1 {
+  margin-top: 0;
+}
+
+.kol3wiersz2 {
+  margin-top: 3rem;
+}
+
+.kol3wiersz3 {
+  margin-top: 6rem;
+}
+
+.kol3wiersz4 {
+  margin-top: 9rem;
+}
+
+.pojedynczyWierszMenu a {
+  text-decoration: none;
+  color: black;
+}
+
+.pojedynczyWierszMenu:hover {
+  background: rgb(213, 230, 255);
+  cursor: pointer;
+}
+
+.wyswietlMenu {
+  display: grid;
+}
+
+.wyswietlMenu a {
+  color: black;
+}
+
+.zamknij {
+  background: rgb(0, 106, 255);
+  color: #fff;
+  cursor: pointer;
+}
+
+.zamknij:hover {
+  background: #262626;
+  color: #fff;
+}
+
+/* Gdy szerokość ekranu jest mniejsza niż 900. Co robić: */
+@media only screen and (max-width: 900px) {
+  .zbiorWierszyMenu {
+    width: 100vw;
+    position: fixed;
+    left: 0;
+  }
+}
+
+/* Koniec dropdown menu */
+
+/* Treść strony: */
+
+.kolumnyTrescStrony {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  align-items: center;
+}
+
+/* .lewaKolumnaTresc {
+*/
+
+#mapid {
+  height: calc(100vh - (5rem + 5rem + 2px));
+  z-index: 1;
+}
+
+/* //
+Prawa kolumna: */
+
+.prawaKolumnaTresc {
+  height: calc(100vh - (5rem + 5rem));
+  overflow-y: none;
+  padding: 0.5rem;
+}
+
+/* Koniec treść strony */
+
+/* Popup z długim opisem */
+
+.modal-bg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0.9%;
+  bottom: 1%;
+  left: 50%;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+  padding-right: 2rem;
+}
+
+.modal-bg-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal {
+  position: relative;
+  background: rgb(255, 255, 255);
+  width: 50%;
+  height: 90vh;
+  display: grid;
+  justify-content: justify;
+  align-items: center;
+  flex-direction: column;
+  opacity: 1;
+  margin: 1rem;
+  margin-top: 10rem;
+  overflow-y: scroll;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.all_roads {
+  height: calc(100vh - (5rem + 5rem));
+  overflow-y: scroll;
+  padding: 0.5rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.single_road {
+  padding: 1rem;
+  border: 1px solid rgb(216, 216, 216);
+  border-bottom: 3px solid rgb(0, 106, 255);
+  margin-top: 0.5rem;
+  color: #262626;
+  cursor: pointer;
+}
+
+.nazwaOdcinkaLista {
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.dlugoscOdcinkaLista {
+  text-align: right;
+  font-size: 1.1rem;
+}
+
+.wykonawcaOdcinkaLista {
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+.jednaInwestycjaSzczegoly {
+  border: solid 1px rgb(216, 216, 216);
+  padding: 4rem;
+  padding-top: 0;
+  font-size: 1.1rem;
+  margin-bottom: 5rem;
+}
+
+.nazwaOdcinkaSzczegoly {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.opisOdcinkaSzczegoly {
+  text-align: justify;
+}
+
+.dlugoscOdcinkaSzczegoly {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.wykonawcaOdcinkaSzczegoly {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+hr.liniarozdzielajaca2 {
+  border-top: 1px solid rgb(216, 216, 216);
+  margin-bottom: 1rem;
+}
+
+/* .richtexteditor {
+  padding-bottom: 3rem;
+} */
+
+/* Gdy szerokość ekranu jest mniejsza niż 900. Co robić: */
+@media only screen and (max-width: 900px) {
+  .kolumnyTrescStrony {
+    grid-template-columns: 1fr;
+  }
+  .lewaKolumnaTresc {
+    display: none;
+  }
+
+  .modal-bg {
+    left: 0%;
+    padding-right: 0rem;
+  }
+
+  .modal {
+    width: 100%;
+    margin: 0;
+    margin-top: 10rem;
+  }
+}

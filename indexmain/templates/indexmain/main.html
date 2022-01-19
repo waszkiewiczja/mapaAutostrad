@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapa budowy autostrad</title>
+    <link rel="shortcut icon" href="{%  static 'indexmain/img/Letter_A.svg' %}">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    
+    <link rel='stylesheet' type='text/css' href="{% static 'indexmain/css/style.css'%}">
+  </head>
+  <body>
+    <div class="mainnavbar">
+      {% include 'indexmain/navbar.html' %}
+    </div>
+
+    <div class="kolumnyTrescStrony">
+
+      <div class="lewaKolumnaTresc">
+        <div id="mapid"></div>
+
+        
+      </div>
+
+      <div class="prawaKolumnaTresc">
+        <div class="mainright">
+          {% block mainright %} 
+          {% endblock mainright %}
+        </div>
+      </div>
+      
+    </div>
+
+      <div class="modal-bg">
+        <div class="modal">
+          <div class="jednaInwestycjaSzczegoly">
+              <div class="nazwaOdcinkaSzczegoly"> </div>
+              <div class="dlugoscOdcinkaSzczegoly"> </div>
+              <div class="wykonawcaOdcinkaSzczegoly"> </div>
+              <hr class="liniarozdzielajaca2" >
+              <div class="testmapa"> </div>
+              <div class="richtexteditor"> </div>
+              <div class="opisOdcinkaSzczegoly"> </div>
+          </div>
+          <div class="fetchdiv">
+
+          </div>
+          <span class="modal-close">X</span>
+        </div>
+      </div>
+    </div>
+    
+    <script type="text/javascript" defer src="{% static 'indexmain/js/map.js' %}"></script>
+    <script
+      src="{% static 'indexmain/js/main.js' %}"
+      type="text/javascript"
+    ></script>
+    {% block page_scripts %}
+    {% endblock page_scripts %}
+  </body>
+</html>

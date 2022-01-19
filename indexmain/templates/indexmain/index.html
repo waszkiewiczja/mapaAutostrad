@@ -1,0 +1,33 @@
+{% extends 'indexmain/main.html' %} 
+
+{% block mainright %}
+
+<div class="all_roads">
+    <div id="ilosc_inwestycji" style="display:none"> {{ilosc_inwestycji}} </div>
+    {% if roads %}
+    {% for road in roads %}
+        <div class="single_road" id='{{road.id}}' data-id='{{road.id}}'>
+            <div class="nazwaOdcinkaLista"> {{road.droga}} {{road.odcinek}} </div>
+            <div class="dlugoscOdcinkaLista"> Długość {{road.km}} km, kwota {{road.koszt}} mln zł </div>
+            <div class="wykonawcaOdcinkaLista"> Wykonawca: {{road.wykonawca}}, termin ukończenia {{road.data_ukonczenia}} </div>
+            <div id="map1_x" style="display:none"> {{road.map1_x}} </div>
+            <div id="map1_y" style="display:none"> {{road.map1_y}} </div>
+            <div id="map2_x" style="display:none"> {{road.map2_x}} </div>
+            <div id="map2_y" style="display:none"> {{road.map2_y}} </div> 
+            
+        </div>
+    {% endfor %}
+    {% endif %}
+
+
+</div>
+
+{% endblock mainright %}
+
+{% block page_scripts %}
+{% load static %}
+<script
+    src="{% static 'indexmain/js/mainindex.js' %}"
+    type="text/javascript"
+></script>
+{% endblock page_scripts %}
