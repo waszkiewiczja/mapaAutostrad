@@ -9,62 +9,11 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
 
-// const polylinePlonskWarszawa = L.polyline(
-//   [
-//     [52.6023, 20.404],
-//     [52.3204, 20.9136],
-//   ],
-//   { color: "rgb(163,87,222)", weight: 10 }
-// ).addTo(map);
-// polylinePlonskWarszawa.bindPopup("S7 Płońsk Warszawa");
-// map.fitBounds(polylinePlonskWarszawa.getBounds());
-
-let t1 = 52.6023;
-
-let te = [
-  [t1, 20.404],
-  [52.3204, 20.9136],
-];
-
-// const polylinePlonskWarszawa = L.polyline(te, {
-//   color: "rgb(163,87,222)",
-//   weight: 10,
-// })
-//   .addTo(map)
-//   .bindPopup("test");
-
 let wszystkiePunkty = [];
-
-// for (let i = 0; i < 94; i++) {
-//   let marker = L.polyline(wMapa[i], {
-//     color: "rgb(163,87,222)",
-//     weight: 10,
-//   })
-//     .addTo(map)
-//     .bindPopup(`${wOdcinki[i]}`);
-//   wszystkiePunkty.push(marker);
-// }
 
 const ilosc_inwestycji = Number(
   document.querySelector("#ilosc_inwestycji").innerHTML
 );
-
-// let map1_x = document.querySelector("#map1_x");
-// let map1_y = document.querySelector("#map1_y");
-// let map2_x = document.querySelector("#map2_x");
-// let map2_y = document.querySelector("#map2_y");
-
-// let obj1 = [
-//   [map1_x.innerHTML, map1_y.innerHTML],
-//   [map2_x.innerHTML, map2_y.innerHTML],
-// ];
-
-// const polylineJ = L.polyline(obj1, {
-//   color: "rgb(163,87,222)",
-//   weight: 10,
-// })
-//   .addTo(map)
-//   .bindPopup("hmm");
 
 //funkcja pobieranie pojedynczej strony
 const buildList = () => {
