@@ -19,7 +19,7 @@ const ilosc_inwestycji = Number(
 const buildList = () => {
   const modal = document.querySelector(".modal");
 
-  const url = `https://mapaauto.herokuapp.com/api/road-detail/${activeRoad}/`;
+  const url = `http://www.mapaautostrad.pl/api/road-detail/${activeRoad}/`;
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
