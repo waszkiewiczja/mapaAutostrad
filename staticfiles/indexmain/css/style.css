@@ -497,4 +497,8 @@ hr.liniarozdzielajaca2 {
     margin: 0;
     margin-top: 10rem;
   }
+
+  .jednaInwestycjaSzczegoly {
+    padding: 0.5rem;
+  }
 }
