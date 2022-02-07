@@ -7,5 +7,5 @@ Mapa inwestycji pokazuje wszystkie aktualnie budowane odcinki dróg. Pokazuje gd
 http://www.mapaautostrad.pl/ Wygląd oraz obsługa zdarzeń została zaprogramowana w Javascript. Technologia backendowa to Django. Do kreacji mapy została użyta biblioteka Leaflet oraz OpenStreetMap.
 
 
-![alt text](https://github.com/waszkiewiczja/mapaAutostrad/blob/[branch]/m1.png?raw=true)
-![alt text](https://github.com/waszkiewiczja/mapaAutostrad/blob/[branch]/m2.png?raw=true)
+![alt text](https://github.com/waszkiewiczja/mapaAutostrad/blob/main/m1.png?raw=true)
+![alt text](https://github.com/waszkiewiczja/mapaAutostrad/blob/main/m2.png?raw=true)
