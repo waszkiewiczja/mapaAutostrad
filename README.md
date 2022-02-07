@@ -4,7 +4,7 @@ www.MapaAutostrad.pl to mapa wszystkich inwestycji w Polsce przeprowadzanych prz
 
 Mapa inwestycji pokazuje wszystkie aktualnie budowane odcinki dróg. Pokazuje gdzie zlokalizowany jest odcinek na mapie, jaką ma długość, kto jest wykonawcą, jaka jest kwota oraz termin ukonczenia inwestlycji.
 
-http://www.mapaautostrad.pl/ Wygląd oraz obsługa zdarzeń została zaprogramowana w Javascript. Technologia backendowa to Django. Do kreacji mapy została użyta biblioteka Leaflet oraz OpenStreetMap.
+Wygląd oraz obsługa zdarzeń została zaprogramowana w Javascript. Technologia backendowa to Django. Do kreacji mapy została użyta biblioteka Leaflet oraz OpenStreetMap.
 
 
 ![alt text](https://github.com/waszkiewiczja/mapaAutostrad/blob/main/m1.png?raw=true)
